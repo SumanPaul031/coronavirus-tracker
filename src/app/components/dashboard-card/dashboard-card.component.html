@@ -1,0 +1,62 @@
+<div class="dashboard">
+  <div>
+    <mat-card style="background-color: transparent;">
+      <mat-card-content>
+          <div class="ui statistic">
+              <div class="label">
+                <h3 style="color: #fff;">Confirmed</h3>
+              </div>
+              <div class="value" style="color: #fff;">
+                <!-- {{totalConfirmed}} -->
+                <p [countUp]="totalConfirmed">0</p>
+              </div>
+          </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div>
+    <mat-card style="background-color: transparent;">
+      <mat-card-content>
+          <div class="ui statistic">
+              <div class="label">
+                <h3 style="color: #fff;">Active</h3>
+              </div>
+              <div class="value" style="color: #fff;">
+                <!-- {{totalActive}} -->
+                <p [countUp]="totalActive">0</p>
+              </div>
+          </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div>
+    <mat-card style="background-color: transparent;">
+      <mat-card-content>
+          <div class="ui statistic">
+              <div class="label">
+                <h3 style="color: #fff;">Deaths</h3>
+              </div>
+              <div class="value" style="color: #fff;">
+                <!-- {{totalDeaths}} -->
+                <p [countUp]="totalDeaths">0</p>
+              </div>
+          </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div>
+    <mat-card style="background-color: transparent;">
+      <mat-card-content>
+          <div class="ui statistic">
+              <div class="label">
+                <h3 style="color: #fff;">Recovered</h3>
+              </div>
+              <div class="value" style="color: #fff;">
+                <!-- {{totalRecovered}} -->
+                <p [countUp]="totalRecovered">0</p>
+              </div>
+          </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

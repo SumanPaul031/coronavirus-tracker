@@ -1,0 +1,48 @@
+<div class="ui dimmer" [class.active]="loading">
+  <div class="ui text loader">Loading</div>
+</div>
+<mat-card class="example-card" style="background-color: transparent;">
+    <mat-card-title style="text-align: center;"><h1>Country wise</h1></mat-card-title>
+    <mat-card-content style="background-color: transparent;">
+        <mat-form-field fxFlex>
+            <mat-label>Select Country</mat-label>
+            <mat-select #input [(value)]="selectedCountry" (selectionChange)="updateValues($event.value)">
+              <mat-option *ngFor="let country of countries" [value]="country">
+                {{country}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card-content>
+    <app-dashboard-card [totalConfirmed]='totalConfirmed' [totalActive]='totalActive' [totalDeaths]='totalDeaths' [totalRecovered]='totalRecovered'></app-dashboard-card>
+</mat-card>
+<span>&nbsp;</span>
+<div class="charts">
+  <div class="scroll" id="div1">
+    <mat-table [dataSource]="selectedCountryData" class="mat-elevation-z8" style="background-color: transparent;">
+      <!-- Serial Number Column -->
+      <ng-container matColumnDef="num">
+        <mat-header-cell *matHeaderCellDef> S.No. </mat-header-cell>
+        <mat-cell *matCellDef="let element; let i = index;"> {{i+1}} </mat-cell>
+      </ng-container>
+    
+      <!-- Date Column -->
+      <ng-container matColumnDef="Date">
+        <mat-header-cell *matHeaderCellDef> date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.date | date}} </mat-cell>
+      </ng-container>
+    
+      <!-- Cases Column -->
+      <ng-container matColumnDef="Cases">
+        <mat-header-cell *matHeaderCellDef> cases </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.cases}} </mat-cell>
+      </ng-container>
+    
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  <div class="scroll" id="div2">
+    <google-chart #linechart [type]="chart.LineChart" [dynamicResize]="true" [columns]="chart.columnNames" [options]="chart.options" style="width: 100%;" [height]="chart.height" [data]="dataTable"></google-chart>
+  </div>
+</div>
+<span>&nbsp;</span>

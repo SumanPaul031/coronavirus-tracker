@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" style="background-color: rgba(6, 6, 83, 0.8);">
+  <div fxHide.gt-xs>
+      <button mat-icon-button (click)="onToggleSidenav()">
+          <mat-icon>menu</mat-icon>
+      </button>
+  </div>
+  <div>
+      <a routerLink="/">Covid-19 Statistics</a>&nbsp;      
+      <a href="https://www.flaticon.com/authors/freepik" title="Freepik"><img src="../../../assets/covid-19 statistics.svg" alt="" style="width: 2rem; height: 2rem;"></a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+      <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+          <li>
+              <a routerLink="home">Home</a>
+          </li>
+          <li>
+              <a routerLink="countries">Countries</a>
+          </li>
+      </ul>
+  </div>
+</mat-toolbar> 

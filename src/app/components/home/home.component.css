@@ -1,0 +1,42 @@
+.example-card {
+    max-width: 100%;
+    text-align: center;
+}
+
+.charts{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+div.scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+@media (max-width: 1200px){
+    .charts{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px){
+    .charts{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px){
+    .charts{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px){
+    .charts{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}

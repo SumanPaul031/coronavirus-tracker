@@ -1,0 +1,50 @@
+<div class="ui dimmer" [class.active]="loading">
+    <div class="ui text loader">Loading</div>
+</div>
+<mat-card class="example-card" style="background-color: transparent;">
+    <mat-card-title style="text-align: center;"><h1>Worldwide</h1></mat-card-title>
+    <app-dashboard-card [totalConfirmed]='totalConfirmed' [totalActive]='totalActive' [totalDeaths]='totalDeaths' [totalRecovered]='totalRecovered'></app-dashboard-card>
+</mat-card> 
+<span>&nbsp;</span>
+<div class="ui form" fxLayout="row" fxLayoutAlign="center center">
+    <div class="inline fields">
+      <!-- <label for="caseType">Select your favorite fruit:</label> -->
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" #confirmed id="confirmed" (click)="updateChart(confirmed)" value="confirmed" name="caseType" checked="" tabindex="0" class="hidden">
+          <label for="confirmed" style="color: #fff;">Confirmed</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" #active id="active" (click)="updateChart(active)" value="active" name="caseType" tabindex="0" class="hidden">
+          <label for="active" style="color: #fff;">Active</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" #deaths id="deaths" (click)="updateChart(deaths)" value="deaths" name="caseType" tabindex="0" class="hidden">
+          <label for="deaths" style="color: #fff;">Deaths</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" #recovered id="recovered" (click)="updateChart(recovered)" value="recovered" name="caseType" tabindex="0" class="hidden">
+          <label for="recovered" style="color: #fff;">Recovered</label>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="charts">
+    <div class="scroll">
+        <!-- <google-chart #columnchart [data]="columnChart"></google-chart> -->
+        <google-chart #columnchart [type]="chart.ColumnChart" [columns]="chart.columnNames" [dynamicResize]="true" [options]="chart.options" style="width: 100%;" [height]="chart.height" [data]="dataTable"></google-chart>
+        <!-- <google-chart [data]="columnChart"></google-chart> -->
+    </div>
+    <div class="scroll">
+        <!-- <google-chart #piechart [data]="pieChart"></google-chart> -->
+        <google-chart #piechart [type]="chart.GeoChart" [dynamicResize]="true" [options]="options" style="width: 100%;" [height]="chart.height" [data]="dataTable"></google-chart>
+        <!-- <google-chart [data]="pieChart"></google-chart> -->
+        <!-- <google-chart [type]="'PieChart'" [data]="myData" [dynamicResize]=true></google-chart> -->
+    </div>
+</div>
