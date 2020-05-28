@@ -2,7 +2,7 @@
     <mat-sidenav #sidenav role="navigation" style="background-color: rgba(6, 6, 83, 0.9);">
       <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
     </mat-sidenav>
-    <mat-sidenav-content style="background-image: url('../assets/virus-1.gif'); background-size: cover; background-position: center;">
+    <mat-sidenav-content style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/virus-1.gif'); background-size: cover; background-position: center;">
       <app-navbar (sidenavToggle)="sidenav.toggle()"></app-navbar>
       <main>
         <router-outlet></router-outlet>

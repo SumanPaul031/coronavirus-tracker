@@ -2,7 +2,7 @@
     <div class="ui text loader">Loading</div>
 </div>
 <mat-card class="example-card" style="background-color: transparent;">
-    <mat-card-title style="text-align: center;"><h1>Worldwide</h1></mat-card-title>
+    <mat-card-title style="text-align: center; color: #00BFFF;"><h1>Worldwide</h1></mat-card-title>
     <app-dashboard-card [totalConfirmed]='totalConfirmed' [totalActive]='totalActive' [totalDeaths]='totalDeaths' [totalRecovered]='totalRecovered'></app-dashboard-card>
 </mat-card> 
 <span>&nbsp;</span>
@@ -12,25 +12,25 @@
       <div class="field">
         <div class="ui radio checkbox">
           <input type="radio" #confirmed id="confirmed" (click)="updateChart(confirmed)" value="confirmed" name="caseType" checked="" tabindex="0" class="hidden">
-          <label for="confirmed" style="color: #fff;">Confirmed</label>
+          <label for="confirmed" style="color: #8A2BE2; filter: brightness(120%);">Confirmed</label>
         </div>
       </div>
       <div class="field">
         <div class="ui radio checkbox">
           <input type="radio" #active id="active" (click)="updateChart(active)" value="active" name="caseType" tabindex="0" class="hidden">
-          <label for="active" style="color: #fff;">Active</label>
+          <label for="active" style="color: #dc3900; filter: brightness(250%);">Active</label>
         </div>
       </div>
       <div class="field">
         <div class="ui radio checkbox">
           <input type="radio" #deaths id="deaths" (click)="updateChart(deaths)" value="deaths" name="caseType" tabindex="0" class="hidden">
-          <label for="deaths" style="color: #fff;">Deaths</label>
+          <label for="deaths" style="color: #8B0000; filter: brightness(200%);">Deaths</label>
         </div>
       </div>
       <div class="field">
         <div class="ui radio checkbox">
           <input type="radio" #recovered id="recovered" (click)="updateChart(recovered)" value="recovered" name="caseType" tabindex="0" class="hidden">
-          <label for="recovered" style="color: #fff;">Recovered</label>
+          <label for="recovered" style="color: #00cc86; filter: brightness(200%);">Recovered</label>
         </div>
       </div>
     </div>

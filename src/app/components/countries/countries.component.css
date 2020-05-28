@@ -23,7 +23,7 @@ div#div2 {
 }
 
 ::ng-deep .mat-select-panel {
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.7);
 }
 
 @media (max-width: 1200px){
